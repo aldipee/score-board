@@ -17,6 +17,4 @@ const PlayerList = () =>(
     </Consumer>
 
 );
-
-
 export default PlayerList;
