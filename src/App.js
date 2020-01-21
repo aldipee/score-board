@@ -28,10 +28,19 @@ class App extends Component {
       id : 4
     }]
   };
+
+  ubahSkor = (indexPlayer, plusMinus) =>{
+    this.setState(prevData =>{
+      return {
+        score : prevData.players[indexPlayer].score += plusMinus
+      }
+    })
+  }
+
   
   render(){
     return (
-      <Provider value={this.state}>
+      <Provider value={{players : this.state.players, actions : {ubahSkor : this.ubahSkor}}}>
           <div className="scoreboard">
           <Header />      
           <PlayerList />
